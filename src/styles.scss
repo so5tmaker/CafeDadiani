@@ -1,2 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$lt-gray: #ddd;
+$background-dark: #455A64;
+$background-light: #B0BEC5;
+$background-pale: #85949c;
+$primary-color-dark:   #455A64;
+$primary-color:        #B0BEC5;
+$primary-color-light:  #85949c;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #059bff;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-light ;
+    color:floralwhite;
+    min-height: 150px;
+}
