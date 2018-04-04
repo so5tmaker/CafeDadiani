@@ -2,11 +2,13 @@ import { Dish } from '../shared/dish';
 
 export const DISHES: Dish[] = [
   {
+    id: 0,
     name: 'Чашушули',
     image: '/assets/images/chashushuli.jpg',
     category: 'Основные',
     label: 'Hot',
     price: '1 699',
+    featured: true,
     description: 'Блюдо из мяса говядины (телятины). В переводе с грузинского обозначает - острый, так как это блюдо приготовлено с большим количеством острого перца, в собственном соку, что обеспечивает ему неповторимый вкус, очень мягкий и острый одновременно.',
     comments: [
       {
@@ -42,11 +44,13 @@ export const DISHES: Dish[] = [
     ]
   },
   {
+    id: 1,
     name: 'Пхали',
     image: '/assets/images/phali.jpg',
     category: 'Закуски',
     label: '',
     price: '1 699',
+    featured: false,
     description: 'Грузинское блюдо Пхали - это холодная закуска, которая может делаться из различных овощей и трав, но неизменным ее ингредиентом являются орехи и специи. Наш вкусный Пхали запомнится Вам надолго.',
     comments: [
       {
@@ -82,11 +86,13 @@ export const DISHES: Dish[] = [
     ]
   },
   {
+    id: 2,
     name: 'Чахохбили',
     image: '/assets/images/chahohbili.jpg',
     category: 'Основные',
     label: 'New',
     price: '1 699',
+    featured: false,
     description: 'Блюдо дня - аппетитный чахохбили! Первоначально делалось из фазана (груз. ხოხობი — [хохоби]), но в настоящее время из любого мяса птицы, а особенно домашней курицы.',
     comments: [
       {
@@ -122,11 +128,13 @@ export const DISHES: Dish[] = [
     ]
   },
   {
+    id: 3,
     name: 'Пахлава',
     image: '/assets/images/pahlava.jpg',
     category: 'Десерт',
     label: '',
     price: '699',
+    featured: false,
     description: 'И в Завершении трапезы не забудьте вкусить сладость сочнейшей свежей "Пахлавы". Это популярное кондитерское изделие из слоёного теста с орехами в сиропе.',
     comments: [
       {
