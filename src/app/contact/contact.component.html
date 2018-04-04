@@ -1,3 +1,38 @@
-<p>
-  contact works!
-</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Контакты</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <h3>Наше расположение</h3>
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="50" fxFlexOffset="20px">
+          <h4>Наш Адрес</h4>
+        <address>
+          <i class="fa fa-mobile"></i>: +7 (771) 487‒13‒13
+          <br>
+          <i class="fa fa-phone"></i>: +7 (727) 291‒90‒24
+          <br>
+          <i class="fa fa-envelope"></i>:
+          <a href="mailto:dadiani.almaty@gmail.com">dadiani.almaty@gmail.com</a>
+        </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="tel:+77714871313">
+            <i class="fa fa-phone"></i> Call</a>
+          <a mat-raised-button>
+            <i class="fa fa-skype"></i> Skype</a>
+          <a mat-raised-button href="mailto:dadiani.almaty@gmail.com">
+            <i class="fa fa-envelope-o"></i> Email</a>
+        </div>
+      </div>
+      <div fxFlex="40">
+        <h4>Наше местоположение</h4>
+      </div>
+    </div>
+  </div>
+</div>
