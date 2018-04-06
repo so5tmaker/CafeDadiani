@@ -1,3 +1,73 @@
-<p>
-  about works!
-</p>
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Немного о нас</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="70">
+        <h2>Наша история</h2>
+        <p>Кафе Дадиани, открытый в 2016 году, быстро зарекомендовала себя как кулинарная икона в Алматы. Благодаря уникальному
+          бренду грузинской кухни, который больше нигде не встречается, он пользуется спросом в Алматы. Показывая четырех
+          лучших шеф-поваров в мире грузинской кухни, вы никогда не поймете, что будет на вашей тарелке в следующий раз,
+          когда вы посетите нас.</p>
+        <p>Ресторан ведет свое скромное начало со скромных успехов, начатых нашим Шеф-Поваром г-ном Ираклием Циклаури, которые
+          завоевали популярность среди людей, живущих в нашей местности.</p>
+      </div>
+      <div fxFlex="30">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h2>Коротко о фактах</h2>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <dl>
+              <dt>Начало</dt>
+              <dd>3 февраля 2013</dd>
+              <dt>Основной участник</dt>
+              <dd>Алматы Холдинг</dd>
+              <dt>Оборот за год, тг</dt>
+              <dd>110 250 375</dd>
+              <dt>Работников</dt>
+              <dd>40</dd>
+            </dl>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-card>
+      <blockquote>
+        <h3>Лучше разрезать пиццу на четыре части, потому что я недостаточно голоден, чтобы съесть шесть.</h3>
+        <footer>-- Йоги Берра,
+          <cite>Остроумие и мудрость Йоги Берра, П. Пепе, Книги Увеселения, 2014</cite>
+        </footer>
+      </blockquote>
+    </mat-card>
+  </div>
+
+
+  <!-- <div fxFlex>
+    <h2>Corporate Leadership</h2>
+    <div class="container" fxLayout="column" fxLayoutGap="10px">
+
+      <mat-list fxFlex>
+        <mat-list-item *ngFor="let leader of leaders">
+          <img mat-list-avatar src={{leader.image}} alt={{leader.name}}>
+          <h1 mat-line> {{leader.name}} </h1>
+          <p mat-line>
+            <span> {{leader.description}} </span>
+          </p>
+        </mat-list-item>
+      </mat-list>
+
+    </div>
+  </div> -->
+</div>
