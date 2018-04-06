@@ -4,7 +4,7 @@ export const LEADERS: Leader[] = [
     {
         id: 0,
         name: 'Ираклий Циклаури',
-        image: '/assets/images/irakliy.png',
+        image: '/assets/images/irakliy.jpg',
         designation: 'Шеф Повар',
         abbr: 'ШП',
         featured: true,
@@ -13,7 +13,7 @@ export const LEADERS: Leader[] = [
     {
         id: 1,
         name: 'Гоча Гиоргадзе',
-        image: '/assets/images/gocha.png',
+        image: '/assets/images/gocha.jpg',
         designation: 'Шеф-кондитер',
         abbr: 'ШК',
         featured: false,
@@ -22,7 +22,7 @@ export const LEADERS: Leader[] = [
     {
         id: 2,
         name: 'Зураб Беридзе',
-        image: '/assets/images/zurab.png',
+        image: '/assets/images/zurab.jpg',
         designation: 'Су-Шеф',
         abbr: 'СШ',
         featured: false,
@@ -31,7 +31,7 @@ export const LEADERS: Leader[] = [
     {
         id: 3,
         name: 'Давид Гелашвили',
-        image: '/assets/images/david.png',
+        image: '/assets/images/david.jpg',
         designation: 'Бренд-Шеф',
         abbr: 'БШ',
         featured: false,
