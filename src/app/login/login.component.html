@@ -9,18 +9,29 @@
 
   <mat-dialog-content>
     <p>
-      <mat-input-container>
-        <input matInput placeholder="Имя пользователя" type="text" [(ngModel)]="user.username" name="username" #username="ngModel" required>
-      </mat-input-container>
-      <mat-input-container>
+      <mat-form-field dividerColor="{{username.invalid && !username.pristine ? 'warn' : 'primary'}}">
+        <input matInput placeholder="Имя пользователя" type="text" [(ngModel)]="user.username" name="username" #username="ngModel"
+          required>
+        <mat-hint>
+          <span [hidden]="username.pristine">
+            <span [hidden]="!username.errors?.required">Введите имя пользователя!</span>
+          </span>
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field dividerColor="{{password.invalid && !password.pristine ? 'warn' : 'primary'}}">
         <input matInput placeholder="Пароль" type="password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
-      </mat-input-container>
+        <mat-hint>
+          <span [hidden]="password.pristine">
+            <span [hidden]="!password.errors?.required">Введите пароль!</span>
+          </span>
+        </mat-hint>
+      </mat-form-field>
       <mat-checkbox [(ngModel)]="user.remember" name="remember">Запомнить меня</mat-checkbox>
     </p>
   </mat-dialog-content>
   <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-button mat-dialog-close>Отменить</button>
-    <button type="submit" mat-button class="background-primary text-floral-white">Войти</button>
+    <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="loginForm.form.invalid">Войти</button>
   </mat-dialog-actions>
 </form>
