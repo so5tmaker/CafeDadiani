@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Comment } from '../shared/comment';
 
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
@@ -19,16 +22,67 @@ export class DishdetailComponent implements OnInit {
   dishIds: number[];
   prev: number;
   next: number;
+  commentForm: FormGroup;
+  comment: Comment;
+  date = new Date();
+
+  formErrors = {
+    'comment': '',
+    'author': ''
+  };
+
+  validationMessages = {
+    'comment': {
+      'required': 'Обязательно введите комментарий'
+    },
+    'author': {
+      'required': 'Обязательно введите имя автора.',
+      'minlength': 'Имя автора должно быть не меньше 2-х символов.',
+      'maxlength': 'Имя автора не должно быть меньше 25 символов.'
+    }
+  };
 
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private fb: FormBuilder) { 
+      this.createForm();
+    }
 
     ngOnInit() {
       this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
       this.route.params   // plus "+" - before params convert string type into integer type
       .switchMap((params: Params) => this.dishservice.getDish(+params['id'])) 
       .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+    }
+
+    createForm() {
+      this.commentForm = this.fb.group({
+        rating: 5,
+        comment: ['', Validators.required],
+        author: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+        date: ''
+      });
+      this.commentForm.valueChanges
+        .subscribe(data => this.onValueChanged(data));
+  
+      this.onValueChanged(); // (re)set validation messages now
+    }
+
+    onValueChanged(data?: any) {
+      if (!this.commentForm) { return; }
+      const form = this.commentForm;
+      for (const field in this.formErrors) {
+        // clear previous error message (if any)
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.validationMessages[field];
+          for (const key in control.errors) {
+            this.formErrors[field] += messages[key] + ' ';
+          }
+        }
+      }
     }
 
     setPrevNext(dishId: number) {
