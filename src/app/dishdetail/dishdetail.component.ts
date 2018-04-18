@@ -33,7 +33,7 @@ export class DishdetailComponent implements OnInit {
 
   validationMessages = {
     'comment': {
-      'required': 'Обязательно введите комментарий'
+      'required': 'Обязательно введите комментарий.'
     },
     'author': {
       'required': 'Обязательно введите имя автора.',
