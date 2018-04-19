@@ -27,6 +27,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -55,7 +56,7 @@ import { baseURL } from './shared/baseurl';
     FlexLayoutModule, AppRoutingModule, FormsModule, ReactiveFormsModule,
     HttpModule
   ],
-  providers: [DishService, PromotionService, LeaderService,
+  providers: [DishService, PromotionService, LeaderService, ProcessHttpmsgService,
     {provide: 'BaseURL', useValue: baseURL}],
   entryComponents: [
     LoginComponent
