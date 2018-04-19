@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -49,7 +50,8 @@ import { LoginComponent } from './login/login.component';
     MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
     MatSlideToggleModule, MatToolbarModule, MatListModule, MatGridListModule,
     MatCardModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule,
-    FlexLayoutModule, AppRoutingModule, FormsModule, ReactiveFormsModule
+    FlexLayoutModule, AppRoutingModule, FormsModule, ReactiveFormsModule,
+    HttpModule
   ],
   providers: [DishService, PromotionService, LeaderService],
   entryComponents: [
