@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Response } from '@angular/http';
 
 @Injectable()
-export class ProcessHttpmsgService {
+export class ProcessHTTPMsgService {
 
   constructor() { }
 
