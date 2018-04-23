@@ -69,8 +69,12 @@
       <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Отправить</button>
     </form>
   </div>
-  <div fxFlex="80" [hidden]="dish">
+  <div fxFlex="80" [hidden]="dish || errMess">
     <mat-spinner></mat-spinner>
     <h4>Идет загрузка . . . Пожалуйста, подождите...</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
   </div>
 </div>
