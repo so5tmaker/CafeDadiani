@@ -25,6 +25,7 @@ export class DishdetailComponent implements OnInit {
   commentForm: FormGroup;
   comment: Comment;
   date = new Date();
+  errMess: string;
 
   formErrors = {
     'comment': '',
@@ -54,7 +55,8 @@ export class DishdetailComponent implements OnInit {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params   // plus "+" - before params convert string type into integer type
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
+      errmess => { this.dish = null; this.errMess = <any>errmess; });
   }
 
   createForm() {
