@@ -19,6 +19,7 @@ import 'rxjs/add/operator/switchMap';
 export class DishdetailComponent implements OnInit {
 
   dish: Dish;
+  dishcopy = null;
   dishIds: number[];
   prev: number;
   next: number;
@@ -53,10 +54,10 @@ export class DishdetailComponent implements OnInit {
 
   ngOnInit() {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
-    this.route.params   // plus "+" - before params convert string type into integer type
-      .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
-      errmess => { this.dish = null; this.errMess = <any>errmess; });
+      this.route.params // plus "+" - before params convert string type into integer type
+      .switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); })
+      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
+          errmess => { this.dish = null; this.errMess = <any>errmess; });
   }
 
   createForm() {
