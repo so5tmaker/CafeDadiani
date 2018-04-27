@@ -42,6 +42,16 @@
       </mat-list-item>
     </mat-list>
 
+    <mat-list>
+      <mat-list-item>
+        <span [hidden]="!(commentForm.value.author && commentForm.value.comment)">
+          <p mat-line>{{ commentForm.value.comment }}</p>
+          <p mat-line>{{ commentForm.value.rating }} Stars</p>
+          <p mat-line>--{{commentForm.value.author}}</p>
+        </span>
+      </mat-list-item>
+    </mat-list>
+
     <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
       <!-- <p>{{ commentForm.value | json }} {{ commentForm.status | json }}</p> -->
       <p>
