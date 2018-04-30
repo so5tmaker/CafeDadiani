@@ -41,6 +41,7 @@ export class DishdetailComponent implements OnInit {
   comment: Comment;
   date = new Date();
   errMess: string;
+  visibility = 'shown';
 
   formErrors = {
     'comment': '',
@@ -69,8 +70,8 @@ export class DishdetailComponent implements OnInit {
   ngOnInit() {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params // plus "+" - before params convert string type into integer type
-      .switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); })
-      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
+      .switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(+params['id']); })
+      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); this.visibility = 'shown'; },
         errmess => { this.dish = null; this.errMess = <any>errmess; });
   }
 
