@@ -8,6 +8,7 @@ import { DishService } from '../services/dish.service';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import 'rxjs/add/operator/switchMap';
 
