@@ -2,11 +2,19 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 import { Leader } from '../shared/leader';
 import { LeaderService } from '../services/leader.service';
+import { flyInOut } from '../animations/app.animation';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  host: {
+    '[@flyInOut]': 'true',
+    'style': 'display: block;'
+  },
+  animations: [
+    flyInOut()
+  ]
 })
 export class AboutComponent implements OnInit {
 
@@ -17,9 +25,9 @@ export class AboutComponent implements OnInit {
     @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
-      this.leaderService.getLeaders()
+    this.leaderService.getLeaders()
       .subscribe(leaders => { this.leaders = leaders },
-      errmess => { this.leaders = null; this.errMess = <any>errmess; });
+        errmess => { this.leaders = null; this.errMess = <any>errmess; });
   }
 
 }
