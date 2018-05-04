@@ -8,7 +8,7 @@ import { DishService } from '../services/dish.service';
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { visibility, flyInOut } from '../animations/app.animation';
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -22,7 +22,8 @@ import 'rxjs/add/operator/switchMap';
   },
   animations: [
     flyInOut(),
-    visibility()
+    visibility(),
+    expand()
   ]
 })
 export class DishdetailComponent implements OnInit {
